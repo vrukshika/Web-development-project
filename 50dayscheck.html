@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>50 Days Task Checker</title>
+        <link rel="stylesheet" href="styles50.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>LeetCode 50 Days Challange</h1>
+            <div class="task-list" id="task-list">
+                <!-- JavaScript will generate the checkboxes here -->
+            </div>
+        </div>
+
+        <script>
+            // JavaScript to generate 50 checkboxes
+            const taskList = document.getElementById('task-list');
+            for (let i = 1; i <= 50; i++) {
+                const taskDiv = document.createElement('div');
+                taskDiv.className = 'task';
+                taskDiv.id = `day-${i}`;
+
+                const label = document.createElement('label');
+                label.setAttribute('for', `day${i}`);
+                label.textContent = `Day ${i}`;
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `day${i}`;
+
+                taskDiv.appendChild(label);
+                taskDiv.appendChild(checkbox);
+                taskList.appendChild(taskDiv);
+            }
+        </script>
+    </body>
+
+</html>
